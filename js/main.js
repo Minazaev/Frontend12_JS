@@ -1,32 +1,28 @@
-function a(x = 11){
-    if(x < 10){
-        console.log("константа меньше 10")
-    }else{
-        console.log("константа не меньше 10")
+let man = {
+    name:  'Усман',
+    sername: 'Усманов',
+    age: 16,
+    height: 170,
+    login: 'usman',
+    password: 'usman95',
+    money: 10000,
+    address: {
+        city: 'Grozny',
+        street: 'Umarova, 19'
     }
 }
 
-a();
-
-function hello(){
-    alert("Hello world!")
-}
-
-hello();
-
-function js(){
-    console.log("JavaScript")
-}
-
-js();
-
-function text(){
-    let text = prompt("Введите текст")
-    if(text === "lorem"){
-        console.log("У вас ошибка в тексте")
+let a = 'usman95'
+function x(){
+    if(a === man.password){
+        console.log("Добро пожаловать " +man.name, man.sername)
     }else{
-        console.log(text)
+        console.log("c")
     }
 }
+x()
+console.log(man)
 
-text();
+for(let i = 0; i < 11; i++){
+    console.log("chislo: " +i)
+}
