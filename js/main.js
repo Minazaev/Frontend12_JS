@@ -23,6 +23,12 @@ function x(){
 x()
 console.log(man)
 
-for(let i = 0; i < 11; i++){
-    console.log("chislo: " +i)
+// for(let i = 0; i < 11; i++){
+//     console.log("chislo: " +i)
+// }
+
+let i = 0;
+while(i < 11){
+    console.log(i)
+    i++;
 }
