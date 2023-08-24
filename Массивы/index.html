@@ -6,6 +6,40 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="main.js"></script>
+    <ul id="list">
+        <li>
+            lorem1
+        </li>
+        <li id="li-2">
+            lorem2
+        </li>
+        <li>Lorem3 
+
+        </li>
+    </ul>
+
+    <script>
+        console.log(document.head.firstElementChild) //meta
+        console.log(document.head.lastElementChild) //title
+        console.log(document.head.parentElement)
+        console.log(document.head.childNodes)
+        console.log(document.head.nextElementSibling)
+        console.log(document.body.previousElementSibling)
+
+
+        let ul = document.getElementById("list")
+        ul.style.background = "green"
+
+        ul.firstElementChild.style.background = "blue"
+        ul.lastElementChild.style.background = "red"
+
+
+
+        let li2 = document.getElementById("li-2") 
+        li2.style.color = "white"
+        
+        console.log(li2)
+        console.log(ul.firstElementChild)
+    </script>
 </body>
 </html>
