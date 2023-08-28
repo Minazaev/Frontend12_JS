@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
+
+        .big{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://cdn.tripzaza.com/ru/destinations/wp-content/uploads/2018/07/1-Paris._France-e1530811226705.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        #big img{
+            width: 800px;
+            height: 100%;
+        }
+        .big-title{
+            position: absolute;
+            bottom: 0;
+            padding: 75px 20px;
+            font-size: 20px;
+            width: 100%;
+            background-color: #fafafa;
+            opacity: .5;
+            color: black;
+        }
+        .card{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 10px;
+            margin-top: 10px;
+        }
+        .card-items{
+            width: 300px;
+            height: 20px;
+        }
+        img{
+            width: 50%;
+        }
+
+        .card-image img{
+            width: 100%;
+        }
+        .active{
+            background-color: #3388ff;
+        }
+        
+    </style>
+</head>
+<body>
+    <main class="main">
+        <div class="big" id="big">
+            <div class="big-title">
+                Самые красивые города Европы 2021
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-item" id="item-1">
+            <div class="card-image">
+                <img src="https://cdn.tripzaza.com/ru/destinations/wp-content/uploads/2018/07/1-Paris._France-e1530811226705.jpg" alt="">
+            </div>
+            <div class="card-title">
+                Самые красивые города Европы 2021
+            </div>
+            </div>
+            <div class="card-item" id="item-2">
+            <div class="card-image">
+                <img src="https://business-swiss.ch/wp-content/uploads/2018/03/samy-j-bogaty-j-gorod-mira.jpg" alt="">
+            </div>
+            <div class="card-title">
+                Самые большие города мира — нет, это не Москва или Нью-Йорк
+            </div>
+            </div>
+            <div class="card-item" id="item-3">
+                <div class="card-image">
+                    <img src="https://tengritravel.kz/userdata/news/2020/news_390536/thumb_m/photo_307436.jpeg" alt="">
+                </div>
+            <div class="card-title">
+                Разрушенный город 12-009
+             </div>
+            </div>
+            </div>
+    </main>
+
+    <script>
+        let big = document.getElementById('big')
+        let item_1 = document.getElementById('item-1')
+        let item_2 = document.getElementById('item-2')
+        let item_3 = document.getElementById('item-3')
+
+        item_1.onclick = active
+        item_2.onclick = active
+        item_3.onclick = active
+
+        item_1 = addEventListener('click', changeInfo)
+        item_2 = addEventListener('click', changeInfo)
+        item_3 = addEventListener('click', changeInfo)
+
+        function active(){
+            item_1.classList.remove('active')
+            item_2.classList.remove('active')
+            item_3.classList.remove('active')
+            this.classList.toggle('active')
+        }
+
+        function changeInfo(){
+            let src = this.firstElementChild.firstElementChild.src
+            let text = this.lastElementChild.innerText
+
+            big.style.backgroundImage = `url(${src})`;
+            big.firstElementChild.innerText = text;
+        }
+
+        console.log( big.firstElementChild.innerText)
+        console.log(big)
+    </script>
+</body>
+</html>
